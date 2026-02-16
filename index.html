@@ -3,13 +3,101 @@
 </header>
 
 <html>
-
-
     <style>
-        html {
-            background-color: rgb(23, 8, 61);
-        }
+        body {
+    background-color: black;
+    transition: all 0.5s ease;
+    }
     </style>
-    <script src="script.js"></script>
+    <script>
+//Set variables
+var timesClicked = 0;
+var numClickRng = 0;
+const defButton = document.createElement('button');
+var levelUpAmount = 25;
+var level = 0;
+var maxRng = 5;
+const upgradeClickButton = document.createElement('button');
+var upgradeCost = 250;
 
+//Functions
+function nice() {
+    if (numClickRng >= maxRng * 0.75) {
+        defButton.style.filter = "blur(10px)"
+        setTimeout(() =>{
+        defButton.style.filter = "none"
+        }, 50)
+       
+    }
+}
+
+//Set up the 'def button' (the button you click)
+defButton.style.width = '70%';
+defButton.style.height = '50%';
+defButton.style.fontSize = '10vw';
+defButton.style.backgroundColor = "#5a485fff";
+defButton.style.borderColor = "#ffffff";
+defButton.style.borderRadius = "1vw";
+defButton.style.borderWidth = "1vw";
+defButton.style.color = "#ffffff";
+defButton.style.position = 'absolute';
+defButton.style.top = '50%';
+defButton.style.left = '50%';
+defButton.style.transform = 'translate(-50%, -50%)';
+defButton.textContent = timesClicked;
+defButton.textContent.maxWidth = 'fit-content'
+
+document.body.append(defButton);
+
+defButton.addEventListener('click', () => {
+    numClickRng = Math.round(Math.random() * maxRng) + 1;
+    timesClicked += numClickRng;
+    defButton.textContent = timesClicked;
+    nice();
+    if (timesClicked >= 1000000000) {
+    defButton.style.fontSize = '8vw';
+    if (timesClicked >= 1000000000) {
+        document.body.style.backgroundColor = "#382d3a"
+        defButton.style.fontSize = '7vw';
+        if (timesClicked >= 1000000000000000) {
+            document.body.style.backgroundColor = "#155350"
+            defButton.style.fontSize = '6vw';
+            if (timesClicked >= 1000000000000000000000n) {
+                document.body.style.backgroundColor = "#355837"
+                defButton.style.fontSize = '5vw';
+        }
+    }
+}
+    else {
+        defButton.style.fontSize = '10vw';
+    }
+}})
+
+//Set up the 'upgradeClickButton' (the button you upgrade with)
+upgradeClickButton.style.width = '50%';
+upgradeClickButton.style.height = '25%';
+upgradeClickButton.style.fontSize = '3vw';
+upgradeClickButton.style.backgroundColor = "rgb(54, 41, 58)";
+upgradeClickButton.style.borderColor = "#ffffff";
+upgradeClickButton.style.borderRadius = "1vw";
+upgradeClickButton.style.borderWidth = "1vw";
+upgradeClickButton.style.color = "#ffffff";
+upgradeClickButton.style.position = 'absolute';
+upgradeClickButton.style.top = '87%';
+upgradeClickButton.style.left = '50%';
+upgradeClickButton.style.transform = 'translate(-50%, -50%)';
+upgradeClickButton.textContent = "Upgrade Click Value " + "(" + String(upgradeCost) + ")";
+
+document.body.append(upgradeClickButton);
+
+upgradeClickButton.addEventListener('click', () => {
+    if (timesClicked >= upgradeCost) {
+        timesClicked -= upgradeCost;
+        upgradeCost = Math.floor(upgradeCost *= 2.9);
+        defButton.textContent = timesClicked;
+        maxRng *= 3;
+        upgradeClickButton.textContent = "Upgrade Click Value " + "(" + String(upgradeCost) + ")";
+    }
+})
+    </script>
 </html>

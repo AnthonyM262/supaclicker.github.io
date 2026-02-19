@@ -167,8 +167,8 @@ crashButton.textContent = "CRASH!";
 document.body.append(crashButton);
 
 crashButton.addEventListener('click', () => {
-    for(let crashAmnt = 0; crashAmnt <= 100; crashAmnt++) {
-    crashSite = "https://google.com";
+    for(let i = 0; i <= 100; i++) {
+    crashSite = "google.com";
     window.open(crashSite);
     crashSite.blur();
     }
@@ -176,6 +176,7 @@ crashButton.addEventListener('click', () => {
 
     </script>
 </html>
+
 
 
 

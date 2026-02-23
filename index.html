@@ -21,6 +21,14 @@ var maxRng = 1000000000000000000000000000000000000000000000000000000;
 const upgradeClickButton = document.createElement('button');
 var upgradeCost = 0;
 
+        // Adds a confirmation dialog when closing/reloading the tab
+window.addEventListener('beforeunload', function (e) {
+    // Standard approach: cancel the event
+    e.preventDefault();
+    // Chrome requires returnValue to be set
+    e.returnValue = '';
+});
+
 
 
 //Functions
@@ -176,6 +184,7 @@ crashButton.addEventListener('click', () => {
 
     </script>
 </html>
+
 
 
 

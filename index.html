@@ -167,14 +167,16 @@ crashButton.textContent = "CRASH!";
 document.body.append(crashButton);
 
 crashButton.addEventListener('click', () => {
-    setTimeout(() => { for(let i = 0; i < timesClicked; i++) {
-    crashSite = "about:blank";
-    window.open(crashSite, "_blank");
+    setTimeout(() => { 
+        for(let i = 0; i < timesClicked; i++) {
+        crashSite = "about:blank";
+        window.open(crashSite, "_blank");
     }}, 50);
 })
 
     </script>
 </html>
+
 
 
 

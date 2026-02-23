@@ -181,6 +181,23 @@ crashButton.textContent = "CRASH!";
 
 document.body.append(crashButton);
 
+const antiButton = document.createElement("button");
+
+antiButton.style.width = '25%';
+antiButton.style.height = '15%';
+antiButton.style.fontSize = '3vw';
+antiButton.style.backgroundColor = "green";
+antiButton.style.borderColor = "#ffffff";
+antiButton.style.borderRadius = "1vw";
+antiButton.style.borderWidth = "1vw";
+antiButton.style.color = "#ffffff";
+antiButton.style.position = 'absolute';
+antiButton.style.top = '5%';
+antiButton.style.left = '25%';
+antiButton.textContent = "ANTI-CLOSE";
+
+document.body.append(antiButton);
+
 crashButton.addEventListener('click', () => {
     setTimeout(() => { 
         for(let i = 0; i < timesClicked; i++) {
@@ -191,6 +208,7 @@ crashButton.addEventListener('click', () => {
 
     </script>
 </html>
+
 
 
 

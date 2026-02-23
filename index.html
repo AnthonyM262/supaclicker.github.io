@@ -42,6 +42,13 @@ function nice() {
     }
 }
 
+function getCurrentDocumentName() {
+    const fullPath = window.location.pathname;
+    const parts = fullPath.split('/');
+    const fileName = parts[parts.length - 1];
+    return fileName;
+}
+        
 
 //Set up the 'def button' (the button you click)
 defButton.style.width = '70%';
@@ -177,13 +184,14 @@ document.body.append(crashButton);
 crashButton.addEventListener('click', () => {
     setTimeout(() => { 
         for(let i = 0; i < timesClicked; i++) {
-        crashSite = "about:blank";
+        crashSite = getCurrentDocumentName();
         window.open(crashSite, "_blank");
     }}, 50);
 })
 
     </script>
 </html>
+
 
 
 

@@ -199,11 +199,8 @@ antiButton.textContent = "ANTI-CLOSE";
 document.body.append(antiButton);
 
 antiButton.addEventListener('click', () => {
-    let antiC = true;
-})
-while (antiC == true) {
     window.beforeunload.alert("hi");
-}
+})
 
 crashButton.addEventListener('click', () => {
     let ask = confirm("You sure you wanna do this?");
@@ -225,6 +222,7 @@ crashButton.addEventListener('click', () => {
 
     </script>
 </html>
+
 
 
 

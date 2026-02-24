@@ -199,15 +199,23 @@ antiButton.textContent = "ANTI-CLOSE";
 document.body.append(antiButton);
 
 crashButton.addEventListener('click', () => {
-    setTimeout(() => { 
+    let ask = confirm("You sure you wanna do this?");
+    if (ask == true) {
+        ask = confirm("Like actually sure?");
+        if (ask == true) {
+        alert("bet");
+        setTimeout(() => { 
         for(let i = 0; i < timesClicked; i++) {
         crashSite = getCurrentDocumentName();
         window.open(crashSite, "_blank");
     }}, 50);
+    }
+
 })
 
     </script>
 </html>
+
 
 
 

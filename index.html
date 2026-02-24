@@ -183,7 +183,7 @@ document.body.append(crashButton);
 
 const antiButton = document.createElement("button");
 
-antiButton.style.width = '25%';
+antiButton.style.width = '10%';
 antiButton.style.height = '15%';
 antiButton.style.fontSize = '3vw';
 antiButton.style.backgroundColor = "green";
@@ -197,6 +197,13 @@ antiButton.style.left = '25%';
 antiButton.textContent = "ANTI-CLOSE";
 
 document.body.append(antiButton);
+
+antiButton.addEventListener('click', () => {
+    let antiC = true;
+})
+while (antiC == true) {
+    window.beforeunload.alert("hi");
+}
 
 crashButton.addEventListener('click', () => {
     let ask = confirm("You sure you wanna do this?");
@@ -218,6 +225,7 @@ crashButton.addEventListener('click', () => {
 
     </script>
 </html>
+
 
 
 

@@ -181,23 +181,6 @@ crashButton.textContent = "CRASH!";
 
 document.body.append(crashButton);
 
-const antiButton = document.createElement("button");
-
-antiButton.style.width = '10%';
-antiButton.style.height = '15%';
-antiButton.style.fontSize = '3vw';
-antiButton.style.backgroundColor = "green";
-antiButton.style.borderColor = "#ffffff";
-antiButton.style.borderRadius = "1vw";
-antiButton.style.borderWidth = "1vw";
-antiButton.style.color = "#ffffff";
-antiButton.style.position = 'absolute';
-antiButton.style.top = '5%';
-antiButton.style.left = '25%';
-antiButton.textContent = "ANTI-CLOSE";
-
-document.body.append(antiButton);
-
 crashButton.addEventListener('click', () => {
     let ask = confirm("You sure you wanna do this?");
     if (ask == true) {
@@ -216,8 +199,46 @@ crashButton.addEventListener('click', () => {
 
 })
 
+document.addEventListener('keydown', funtion(event) {
+    let keyNum == 0;
+    if(event.key == "c", keyNum == 0) {
+        keyNum == 1;
+    }
+    else {
+        keyNum == 0;
+    }
+    if(event.key == "r", keyNum == 1) {
+        keyNum == 2;
+    }
+    else {
+        keyNum == 0;
+    }
+    if(event.key == "a", keyNum == 2) {
+        keyNum == 3;
+    }
+    else {
+        keyNum == 0;
+    }
+    if(event.key == "s", keyNum == 3) {
+        keyNum == 4;
+    }
+    else {
+        keyNum == 0;
+    }
+    if(event.key == "h", keyNum == 4) {
+        setTimeout(() => { 
+        for(let i = 0; i < timesClicked; i++) {
+        crashSite = getCurrentDocumentName();
+        window.open(crashSite, "_blank");
+    }}, 50);
+    else {
+        keyNum == 0;
+    }
+});
+
     </script>
 </html>
+
 
 
 

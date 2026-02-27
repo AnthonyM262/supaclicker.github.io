@@ -6,8 +6,8 @@
 <html>
     <style>
         body {
-    background-color: black;
     transition: all 0.5s ease;
+    background-color: black;
     }
     </style>
     <script>
@@ -21,11 +21,11 @@ var maxRng = 1000000000000000000000000000000000000000000000000000000;
 const upgradeClickButton = document.createElement('button');
 var upgradeCost = 0;
 
-        // Adds a confirmation dialog when closing/reloading the tab
+//Add confirmation window
 window.addEventListener('beforeunload', function (e) {
-    // Standard approach: cancel the event
+
     e.preventDefault();
-    // Chrome requires returnValue to be set
+
     e.returnValue = '';
 });
 
@@ -97,31 +97,7 @@ defButton.addEventListener('click', () => {
         defButton.style.fontSize = '10vw';
     }
 }})
-
-
-//defButton.addEventListener('touchstart', () => {
-//    numClickRng = Math.round(Math.random() * maxRng) + 1;
-//    timesClicked += numClickRng;
-//    defButton.textContent = timesClicked;
-//    nice();
-//    if (timesClicked >= 1000000000) {
-//    defButton.style.fontSize = '8vw';
-//    if (timesClicked >= 1000000000) {
-//        document.body.style.backgroundColor = "#00ff8c"
-//        defButton.style.fontSize = '7vw';
-//        if (timesClicked >= 1000000000000000) {
-//            document.body.style.backgroundColor = "#00ff8c"
-//            defButton.style.fontSize = '6vw';
-//            if (timesClicked >= 1000000000000000000000n) {
-//                document.body.style.backgroundColor = "#00ff8c"
-//                defButton.style.fontSize = '5vw';
-//        }
-//    }
-//}
-//    else {
-//        defButton.style.fontSize = '10vw';
-//    }
-//}})
+        
 //Set up the 'upgradeClickButton' (the button you upgrade with)
 upgradeClickButton.style.width = '50%';
 upgradeClickButton.style.height = '25%';
@@ -150,18 +126,6 @@ upgradeClickButton.addEventListener('click', () => {
         upgradeClickButton.textContent = "Upgrade Click Value " + "(" + String(upgradeCost) + ")";
     }
 })
-
-
-//upgradeClickButton.addEventListener('touchstart', () => {
-//    if (timesClicked >= upgradeCost) {
-//        timesClicked -= upgradeCost;
-//        upgradeCost = Math.floor(upgradeCost *= 2.9);
-//        defButton.textContent = timesClicked;
-//        maxRng *= 3;
-//        upgradeClickButton.textContent = "Upgrade Click Value " + "(" + String(upgradeCost) + ")";
-//        
-//    }
-//})
 
 //Set up the crash button
 const crashButton = document.createElement("button");
@@ -202,34 +166,3 @@ crashButton.addEventListener('click', () => {
 
     </script>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
